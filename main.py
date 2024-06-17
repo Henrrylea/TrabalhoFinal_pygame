@@ -1,3 +1,4 @@
+#INICIANDO O PROJETO EM PYGAME
 import pygame
 from pygame.locals import *
 from sys import exit
@@ -45,6 +46,7 @@ random_obstacle = choice([0, 1])
 random_ground = randint(0,2)
 points = 0
 
+#DECLARANDO CLASSES E MECÂNICA DO JOGO
 class MJ(pygame.sprite.Sprite):
     def __init__(self):
         pygame.sprite.Sprite.__init__(self)
@@ -156,6 +158,7 @@ def exibe_texto(msg, tamanho, cor, x, y):
     screen.blit(texto, texto_rect)
 
 def restart_game():
+    #REINICIA OS VALORES E O JOGO
     global points, GAME_SPEED, colidir, random_obstacle, random_ground, SCROLL
     points = 0
     GAME_SPEED = 10
@@ -270,6 +273,8 @@ while True:
 
     if points % 500 == 0:
         pontuacao_sound.play()
+
+
         if GAME_SPEED >= 20:
             GAME_SPEED += 0
         else:
@@ -278,3 +283,4 @@ while True:
     todas_as_sprites.draw(screen)
 
     pygame.display.flip()
+#FIM DA APLICAÇÃO DO JOGO
